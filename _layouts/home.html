@@ -1,0 +1,50 @@
+---
+layout: default
+---
+<header>
+  <h1>{{ site.title }}</h1>
+  {% if site.theme_config.show_description %}
+    <p>{{ site.description }}</p>
+  {% endif %}
+  <script type="text/javascript">
+     
+    function sendLetter(){
+      var to_names = new Array("Yosef", "Gávi", "גבריאל‏ יוסף", "席嘉力", "آتش جاوید");
+
+      var endearments = new Array("Darling", "Dear", "Honey", "Jewel", "Love", "Moppet", "Sweetheart");
+
+      var adjectives = new Array("affectionate", "amorous", "adorable", "anxious", "avid", "beautiful", "breathless", "burning", "covetous", "craving", "curious", "dear", "eager", "erotic", "fervent", "fond", "fondest", "keen", "little", "lovable", "lovely", "lovesick", "loving", "passionate", "precious", "seductive", "sweet", "sympathetic", "tender", "unsatisfied", "winning", "wistful");
+
+      var nouns = new Array("adoration", "affection", "ambition", "appetite", "ardour", "being", "burning", "charm", "craving", "desire", "devotion", "eagerness", "enchantment", "enthusiasm", "fancy", "fellow feeling", "fervour", "fondness", "heart", "hunger", "infatuation", "liking", "little liking", "longing", "love", "lust", "passion", "rapture", "sympathy", "tenderness", "thirst", "wish", "yearning");
+
+      var adverbs = new Array("affectionately", "ardently", "anxiously", "avidly", "beautifully", "burningly", "covetously", "curiously", "devotedly", "eagerly", "fervently", "fondly", "impatiently", "keenly", "lovingly", "passionately", "seductively", "tenderly", "winningly", "wistfully");
+
+      var verbs = new Array("adores", "attracts", "clings to", "holds dear", "hopes for", "hungers for", "likes", "longs for", "loves", "lusts after", "pants for", "pines for", "sighs for", "tempts", "thirsts for", "treasures", "yearns for", "wishes", "woos");
+
+      var from_names = new Array("Gene", "למואל צבי");
+      
+      var greeting = to_names[0] + " " + endearments[0];
+      var declaration1 = "You are my " + adjectives[0] + " " + nouns[0] + ". ";
+      var declaration2 = "My " + adjectives[0] + " " + nouns[0] + " " + adverbs[0] + " " + verbs[0] + " your " + adjectives[0] + " " + nouns[0] + ". ";
+      var declaration3 = "You are my " + adjectives[0] + " " + nouns[0] + ".. my " + adjectives[0] + " " + nouns[0] + ". ";
+      var farewell = "Yours " + adverbs[0] + " " + from_names[0];
+      
+      document.getElementById("greeting").innerHTML=greeting;
+      document.getElementById("declaration1").innerHTML=declaration1;
+      document.getElementById("declaration2").innerHTML=declaration2;
+      document.getElementById("declaration3").innerHTML=declaration3;
+      document.getElementById("farewell").innerHTML=farewell;
+    }
+    
+  </script>
+</header>
+
+<body onLoad="sendLetter()">
+{{ content }}
+<div id="greeting" style="text-align=right"></div>
+<div id="declaration1"></div>
+<div id="declaration2"></div>
+<div id="declaration3"></div>
+<div id="farewell" style="text-align=right"></div>
+<button onclick="sendLetter()">New letter</button>
+</body>
