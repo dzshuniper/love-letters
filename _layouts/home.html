@@ -20,15 +20,15 @@ layout: default
     function sendLetter(){
       var to_names = new Array("YOSEF", "GÁVI", "גבריאל‏ יוסף", "席嘉力", "آتش جاوید");
 
-      var endearments = new Array("DARLING", "DEAR", "HONEY", "JEWEL", "LOVE", "MOPPET", "SWEETHEART");
+      var endearments = new Array("DARLING", "DEAR", "DUCK", "HONEY", "JEWEL", "LOVE", "MOPPET", "SWEETHEART");
 
-      var adjectives = new Array("AFFECTIONATE", "AMOROUS", "ADORABLE", "ANXIOUS", "AVID", "BEAUTIFUL", "BREATHLESS", "BURNING", "COVETOUS", "CRAVING", "CURIOUS", "DEAR", "EAGER", "EROTIC", "FERVENT", "FOND", "FONDEST", "KEEN", "LITTLE", "LOVABLE", "LOVELY", "LOVESICK", "LOVING", "PASSIONATE", "PRECIOUS", "SEDUCTIVE", "SWEET", "SYMPATHETIC", "TENDER", "UNSATISFIED", "WINNING", "WISTFUL");
+      var adjectives = new Array("AFFECTIONATE", "AMOROUS", "ADORABLE", "ANXIOUS", "AVID", "BEAUTIFUL", "BREATHLESS", "BURNING", "COVETOUS", "CRAVING", "CURIOUS", "DEAR", "EAGER", "EROTIC", "FERVENT", "FOND", "FONDEST", "IMPATIENT", "KEEN", "LITTLE", "LOVABLE", "LOVELY", "LOVESICK", "LOVING", "PASSIONATE", "PRECIOUS", "SEDUCTIVE", "SWEET", "SYMPATHETIC", "TENDER", "UNSATISFIED", "WINNING", "WISTFUL");
 
-      var nouns = new Array("ADORATION", "AFFECTION", "AMBITION", "APPETITE", "ARDOUR", "BEING", "BURNING", "CHARM", "CRAVING", "DESIRE", "DEVOTION", "EAGERNESS", "ENCHANTMENT", "ENTHUSIASM", "FANCY", "FELLOW FEELING", "FERVOUR", "FONDNESS", "HEART", "HUNGER", "INFATUATION", "LIKING", "LITTLE LIKING", "LONGING", "LOVE", "LUST", "PASSION", "RAPTURE", "SYMPATHY", "TENDERNESS", "THIRST", "WISH", "YEARNING");
+      var nouns = new Array("ADORATION", "AFFECTION", "AMBITION", "APPETITE", "ARDOUR", "BEING", "BURNING", "CHARM", "CRAVING", "DESIRE", "DEVOTION", "EAGERNESS", "ENCHANTMENT", "ENTHUSIASM", "FANCY", "FELLOW FEELING", "FERVOUR", "FONDNESS", "HEART", "HUNGER", "INFATUATION", "LIKING", "LONGING", "LOVE", "LUST", "PASSION", "RAPTURE", "SYMPATHY", "TENDERNESS", "THIRST", "WISH", "YEARNING");
 
       var adverbs = new Array("AFFECTIONATELY", "ARDENTLY", "ANXIOUSLY", "AVIDLY", "BEAUTIFULLY", "BURNINGLY", "COVETOUSLY", "CURIOUSLY", "DEVOTEDLY", "EAGERLY", "FERVENTLY", "FONDLY", "IMPATIENTLY", "KEENLY", "LOVINGLY", "PASSIONATELY", "SEDUCTIVELY", "TENDERLY", "WINNINGLY", "WISTFULLY");
 
-      var verbs = new Array("ADORES", "ATTRACTS", "CLINGS TO", "HOLDS DEAR", "HOPES FOR", "HUNGERS FOR", "LIKES", "LONGS FOR", "LOVES", "LUSTS AFTER", "PANTS FOR", "PINES FOR", "SIGHS FOR", "TEMPTS", "THIRSTS FOR", "TREASURES", "YEARNS FOR", "WISHES", "WOOS");
+      var verbs = new Array("ADORES", "ATTRACTS", "CARES FOR", "CLINGS TO", "HOLDS DEAR", "HOPES FOR", "HUNGERS FOR", "IS WEDDED TO", "LIKES", "LONGS FOR", "LOVES", "LUSTS AFTER", "PANTS FOR", "PINES FOR", "SIGHS FOR", "TEMPTS", "THIRSTS FOR", "TREASURES", "YEARNS FOR", "WANTS", "WISHES", "WOOS");
 
       var from_names = new Array("GENE", "למואל צבי");
       
@@ -36,16 +36,20 @@ layout: default
       var declarationA = "YOU ARE MY " + adjectives[Math.floor(Math.random() * adjectives.length)] + " " + nouns[Math.floor(Math.random() * nouns.length)] + ". ";
       var declarationB = "MY " + adjectives[Math.floor(Math.random() * adjectives.length)] + " " + nouns[Math.floor(Math.random() * nouns.length)] + " " + adverbs[Math.floor(Math.random() * adverbs.length)] + " " + verbs[Math.floor(Math.random() * verbs.length)] + " YOUR " + adjectives[Math.floor(Math.random() * adjectives.length)] + " " + nouns[Math.floor(Math.random() * nouns.length)] + ". ";
       var declarationC = "YOU ARE MY " + adjectives[Math.floor(Math.random() * adjectives.length)] + " " + nouns[Math.floor(Math.random() * nouns.length)] + ".. MY " + adjectives[Math.floor(Math.random() * adjectives.length)] + " " + nouns[Math.floor(Math.random() * nouns.length)] + ". ";
-      var farewell = "YOURS " + adverbs[Math.floor(Math.random() * adverbs.length)] + " " + from_names[Math.floor(Math.random() * from_names.length)];
+      var declarationD = "MY " + adjectives[Math.floor(Math.random() * adjectives.length)] + " " + nouns[Math.floor(Math.random() * nouns.length)] + " " + adverbs[Math.floor(Math.random() * adverbs.length)] + " " + verbs[Math.floor(Math.random() * verbs.length)] + " YOUR " + nouns[Math.floor(Math.random() * nouns.length)] + ". ";
+      var farewell = "YOURS " + adverbs[Math.floor(Math.random() * adverbs.length)];
+      var signoff = from_names[Math.floor(Math.random() * from_names.length)];
       
-      var declarations = new Array(declarationA, declarationB, declarationC);
+      var declarations = new Array(declarationA, declarationB, declarationC, declarationD);
       shuffleArray(declarations);
       
       document.getElementById("greeting").innerHTML=greeting;
       document.getElementById("declaration1").innerHTML=declarations[0];
       document.getElementById("declaration2").innerHTML=declarations[1];
       document.getElementById("declaration3").innerHTML=declarations[2];
+      document.getElementById("declaration4").innerHTML=declarations[3];
       document.getElementById("farewell").innerHTML=farewell;
+      document.getElementById("signoff").innerHTML=signoff;
     }
     
   </script>
@@ -53,10 +57,15 @@ layout: default
 
 <body onLoad="sendLetter()">
 {{ content }}
-<div id="greeting" style="text-align=right"></div>
-<div id="declaration1"></div>
-<div id="declaration2"></div>
-<div id="declaration3"></div>
-<div id="farewell" style="text-align=left"></div>
+<p><br/><br/></p>
+<p>
+<span id="greeting"></span><br/>
+<br/>
+<span id="declaration1"></span><span id="declaration2"></span><span id="declaration3"></span><span id="declaration4"></span><br/>
+<br/>
+<span id="farewell"></span><br/>
+<span id="signoff"><span>
+</p>
+<p><br/><br/></p>
 <button onclick="sendLetter()">New letter</button>
 </body>
