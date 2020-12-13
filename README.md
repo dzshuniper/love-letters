@@ -2,7 +2,7 @@
 
 ## About ##
 
-This is an anniversary gift to my partner, inspired by the work of Christopher Strachey. It is a JavaScript implementation of the love letters program that Strachey implemented using the Ferranti Mark I at the Manchester University Computing department in 1953-1954. As a Mancunian in a same-gender relationship, I felt a connection to Strachey, a gay man writing love letters with computers in Manchester.
+This is an anniversary gift to my partner, inspired by the work of Christopher Strachey. It is a JavaScript implementation of the love letters program that Strachey implemented using the Ferranti Mark I at the Manchester University Computing department in 1953-1954. As a geeky Mancunian in a same-gender relationship, I felt a connection to Strachey, a gay man writing love letters with computers in Manchester.
 
 For more about Christopher Strachey, as well as other love letter implementations, see the following:
 [Christopher Strachey "Loveletters" (1952)](https://www.gingerbeardman.com/loveletter/)
